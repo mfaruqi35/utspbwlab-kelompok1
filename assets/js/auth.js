@@ -20,9 +20,10 @@ if (handleRegister) {
 
       const result = await response.json();
 
-      if (!result.ok) {
+      if (!result.status) {
         alert(result.message || "Register failed");
         return;
+        
       } else {
         alert("Register successful");
         console.log(result);
