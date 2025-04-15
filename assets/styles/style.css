@@ -1,88 +1,155 @@
 @font-face {
+  font-family: "Montserrat";
+  src: url(../fonts/Montserrat/Montserrat-VariableFont_wght.ttf);
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
     font-family: 'Montserrat';
     src: url(../fonts/Montserrat/Montserrat-VariableFont_wght.ttf);
-    font-weight: normal;
+    font-weight: 400;
     font-style: normal;
 }
 
-* { 
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    outline: none;
-    border: none;
-    text-decoration: none;
+@font-face {
+  font-family: "Montserrat";
+  src: url(../fonts/Montserrat/Montserrat-VariableFont_wght.ttf);
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url(../fonts/Montserrat/Montserrat-VariableFont_wght.ttf);
+    font-weight: 700;
+    font-style: normal  ;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  outline: none;
+  border: none;
+  text-decoration: none;
 }
 
 body {
-    font-family: 'Montserrat';
-    display: flex;
-    flex-direction: column;
+  font-family: "Montserrat";
+  background-color: #f6f8fa;
+  display: flex;
+  flex-direction: column;
 }
 
-.navbar{
-    position: fixed;
-    background-color: #f8f9fa;
-    display: flex;
-    justify-content: space-between;
-    z-index: 999;
-    border: 1px black solid;
-    padding-inline: 4vw;
-    padding-block: 2vh;
-    top: 0;
-    left: 0;
-    right: 0;
+.navbar {
+  background-color: #f8f9fa;
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  z-index: 999;
+  border: 1px black solid;
+  padding-inline: 10vw;
+  padding-block: 2vh;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 
-.navbar-auth{
-    display: flex;
-    gap: 3vw;
+.navbar-auth {
+  display: flex;
+  gap: 1vw;
 }
 
-.login-button{
-    border-radius: 5px;
-    padding-block: 5px;
-    padding-inline: 17px;
-    border: black solid 1px;
+.login-button {
+  background-color: #fff;
+  border-radius: 5px;
+  padding-block: 7px;
+  padding-inline: 17px;
+  border: 1px rgb(183, 180, 180) solid;
+  box-shadow: 0px 1px rgba(130, 128, 128, 0.35);
 }
 
-.register-button{
-    border-radius: 5px;
-    padding-block: 5px;
-    padding-inline: 17px;
-    border: 1px black solid;
-    box-shadow: 50px;
+.register-button {
+  background-color: #657ac9;
+  color: #f8f9fa;
+  border-radius: 5px;
+  padding-block: 7px;
+  padding-inline: 17px;
+  border: 1px #657ac9 solid;
+  box-shadow: 0px 1px rgba(130, 128, 128, 0.35);
 }
 
-.hero{
-    display: flex;
-    min-height: 100vh;
-    border: solid;
-    padding-block: 9vh;
+.hero {
+  display: flex;
+  min-height: 100vh;
+  padding-block: 9vh;
 }
 
-.hero-content{
-    display: flex;
-    flex-direction: column;
-    border: solid;
-    width: 100%;
-    align-items: center;
-    gap: 15px;
-    padding-top: 5vh;
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  gap: 18px;
+  padding-top: 5vh;
 }
 
-.greeting{
-    font-size: 50px;
-    text-wrap: wrap;
-    border: solid;
-    width: 70vh;
-    text-align: center;
+h1.greeting {
+  color: #17173C;
+  font-size: 40px;
+  font-weight: 600;
+  text-wrap: wrap;
+  width: 70vh;
+  text-align: center;
 }
 
-.hero-button{
-    border-radius: 5px;
-    padding-block: 5px;
-    padding-inline: 17px;
-    border: 1px black solid;
-    box-shadow: 50px;
+p.greeting {
+  color: #17173C;
+  padding-bottom: 10px;
+}
+
+.hero-button {
+  background-color: #fff;
+  border-radius: 5px;
+  padding-block: 7px;
+  padding-inline: 17px;
+  border: 1px rgb(183, 180, 180) solid;
+  box-shadow: 0px 1px rgba(102, 101, 101, 0.6);
+}
+
+.card-feature {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: none;
+  width: 90vw;
+  height:75vh;
+  background: #a4b5dc;
+  background: radial-gradient(
+    circle,
+    rgba(164, 181, 220, 1) 0%,
+    rgba(248, 249, 250, 1) 43%
+  );
+}
+
+.feature-left{
+  border: solid;
+  width: 50px;
+  height: 50px;
+  background-color: white;
+}
+
+.feature-center{
+  border: solid;
+  width: 50px;
+  height: 50px;
+  background-color: white;
+}
+
+.feature-right{
+  border: solid;
+  width: 50px;
+  height: 50px;
+  background-color: white ;
 }
