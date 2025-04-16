@@ -4,38 +4,89 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Login | TaskFlow</title>
-  <link rel="stylesheet" href="assets/styles/style.css"/>
+  <link rel="stylesheet" href="assets/styles/style.css" />
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f8fafd;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f8fafd;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: #7886d7;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .container {
+      flex: 1;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      padding: 40px 20px;
     }
 
-    #login {
+    .card {
+      display: flex;
+      flex-direction: row;
       background: white;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      max-width: 900px;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .card img {
+      width: 50%;
+      object-fit: cover;
+    }
+
+    .form-section {
+      flex: 1;
       padding: 40px;
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
       display: flex;
       flex-direction: column;
-      width: 100%;
-      max-width: 400px;
+      justify-content: center;
     }
 
-    #login input {
+    .form-section h2 {
+      margin-bottom: 10px;
+      font-size: 26px;
+      color: #1e1e2f;
+      text-align: center;
+    }
+
+    .form-section p {
+      margin-bottom: 30px;
+      color: #555;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    form input {
       margin-bottom: 20px;
       padding: 12px;
       border: 1px solid #ccc;
       border-radius: 8px;
       font-size: 16px;
+      width: 100%;
+      max-width: 300px;
     }
 
-    #login button {
+    form button {
       background-color: #7886d7;
       color: white;
       border: none;
@@ -43,55 +94,54 @@
       border-radius: 8px;
       cursor: pointer;
       font-size: 16px;
-      transition: background-color 0.3s ease;
+      width: 100%;
+      max-width: 300px;
     }
 
-    #login button:hover {
+    form button:hover {
       background-color: #5a6acb;
     }
 
-    .login-title {
-      font-size: 24px;
-      font-weight: bold;
-      color: #1e1e2f;
-      margin-bottom: 20px;
+    footer {
       text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      background-color: #f1f1f1;
+      color: #555;
     }
 
-    .login-subtitle {
-      font-size: 14px;
-      color: #555;
-      text-align: center;
-      margin-bottom: 30px;
+    @media (max-width: 768px) {
+      .card {
+        flex-direction: column;
+      }
+
+      .card img {
+        width: 100%;
+        height: 200px;
+      }
     }
   </style>
 </head>
 <body>
-  <form id="login">
-    <div class="login-title">Welcome Back</div>
-    <div class="login-subtitle">Login to continue to TaskFlow</div>
-    <input type="email" id="email" placeholder="Email" required />
-    <input type="password" id="password" placeholder="Password" required />
-    <button type="submit">Login</button>
-  </form>
+  <header>TaskFlow</header>
 
-  <script type="module">
-    import { loginUser } from './assets/js/auth.js';
+  <div class="container">
+    <div class="card">
+      <img src="assets/images/456e6223-6931-4405-8fde-9d5807865f8f.png" alt="Login Illustration" />
+      <div class="form-section">
+        <h2>Log in to TaskFlow</h2>
+        <p>Enter your email and password to continue.</p>
+        <form id="login-form">
+          <input type="email" id="email" placeholder="Enter your email..." required />
+          <input type="password" id="password" placeholder="Enter your password..." required />
+          <button type="submit">Log In</button>
+        </form>
+      </div>
+    </div>
+  </div>
 
-    document.getElementById('login').addEventListener('submit', async (e) => {
-      e.preventDefault();
+  <footer>&copy; 2025 TaskFlow. All rights reserved.</footer>
 
-      const email = document.getElementById('email').value.trim();
-      const password = document.getElementById('password').value.trim();
-
-      const success = await loginUser(email, password); // pastikan loginUser adalah async
-      if (success) {
-        alert("Login berhasil!");
-        window.location.href = "dashboard.html";
-      } else {
-        alert("Email atau password salah, atau belum terdaftar.");
-      }
-    });
-  </script>
+  <script src="assets/js/auth.js"></script>
 </body>
 </html>
