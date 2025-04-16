@@ -7,7 +7,17 @@
     <link rel="stylesheet" href="./assets/styles/style.css" />
   </head>
   <body>
-    <div id="navbar-placeholder"></div>
+    <nav class="navbar">
+      <div class="navbar-logo">TaskFlow</div>
+      <div class="navbar-auth">
+        <a href="login.html">
+          <button class="login-button">Log in</button>
+        </a>
+        <a href="register.html">
+          <button class="register-button">Sign Up</button>
+        </a>
+      </div>
+    </nav>
     <section class="hero">
       <main class="hero-content">
         <h1 class="greeting">The better way to schedule your day</h1>
@@ -15,9 +25,7 @@
           A fully customisable scheduling experience for individuals.
         </p>
         <a href="register.html">
-          <button class="hero-button">
-            Get started
-          </button>
+          <button class="hero-button">Get started</button>
         </a>
         <div class="card-feature">
           <div class="feature-left"></div>
@@ -26,6 +34,5 @@
         </div>
       </main>
     </section>
-    <script src="./assets/js/main.js" type="module"></script>
   </body>
 </html>
