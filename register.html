@@ -1,18 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
-    <link rel="stylesheet" href="assets/styles/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Register | TaskFlow</title>
+  <link rel="stylesheet" href="assets/styles/style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f8fafd;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    #register {
+      background: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    #register input {
+      margin-bottom: 20px;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    #register button {
+      background-color: #7886d7;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+
+    #register button:hover {
+      background-color: #5a6acb;
+    }
+
+    .register-title {
+      font-size: 24px;
+      font-weight: bold;
+      color: #1e1e2f;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .register-subtitle {
+      font-size: 14px;
+      color: #555;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+  </style>
 </head>
 <body>
-    <form id="register">
-        <input type="email" name="email" id="email" placeholder="email">
-        <input type="text" name="fullName" id="username" placeholder="username">
-        <input type="password" name="password" id="password" placeholder="password">
-        <button type="submit">Submit</button>
-    </form>
-    <script src="assets/js/auth.js" type="module"></script>
+  <form id="register">
+    <div class="register-title">Create Account</div>
+    <div class="register-subtitle">Sign up for your TaskFlow account</div>
+    <input type="email" id="email" placeholder="Email" required />
+    <input type="text" id="username" placeholder="Username" required />
+    <input type="password" id="password" placeholder="Password" required />
+    <button type="submit">Register</button>
+  </form>
+
+  <script type="module">
+    import { registerUser, loginUser } from './assets/js/auth.js';
+  
+    document.getElementById('register').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const email = document.getElementById('email').value.trim();
+      const username = document.getElementById('username').value.trim();
+      const password = document.getElementById('password').value.trim();
+  
+      const registerResult = registerUser(email, username, password);
+  
+      if (registerResult.success) {
+        const loginResult = loginUser(email, password);
+        if (loginResult.success) {
+          alert('Registrasi dan login berhasil! Mengarahkan ke dashboard...');
+          window.location.href = 'dashboard.html';
+        } else {
+          alert('Registrasi berhasil, tapi gagal login. Silakan login manual.');
+          window.location.href = 'login.html';
+        }
+      } else {
+        alert(registerResult.message);
+      }
+    });
+  </scripttype="module">
+  
 </body>
 </html>
