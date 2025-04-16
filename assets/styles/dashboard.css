@@ -1,0 +1,111 @@
+@font-face {
+  font-family: "Montserrat";
+  src: url(../fonts/Montserrat/Montserrat-VariableFont_wght.ttf);
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url(../fonts/Montserrat/Montserrat-VariableFont_wght.ttf);
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url(../fonts/Montserrat/Montserrat-VariableFont_wght.ttf);
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url(../fonts/Montserrat/Montserrat-VariableFont_wght.ttf);
+    font-weight: 700;
+    font-style: normal  ;
+}
+
+.todo {
+  transition: all 0.3s ease;
+}
+
+.todo-info {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.todo-name {
+  flex-grow: 1;
+  padding: 10px 0;
+}
+
+.todo:hover .todo-actions {
+  opacity: 1;
+}
+
+.todo-actions {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.todo-completed .todo-name {
+  text-decoration: line-through;
+  color: #9ca3af;
+}
+
+.dropdown-toggle {
+  cursor: pointer;
+}
+
+/* Loading animation */
+@keyframes spin {
+  from {
+      transform: rotate(0deg);
+  }
+  to {
+      transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* Todo actions appear on hover */
+.todo-actions {
+  display: none;
+}
+
+.todo:hover .todo-actions {
+  display: flex;
+}
+
+/* For the completed todo checkbox */
+.todo-checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #d1d5db;
+  border-radius: 50%;
+  margin-right: 10px;
+  cursor: pointer;
+  position: relative;
+}
+
+.todo-checkbox:checked {
+  background-color: #f43f5e;
+  border-color: #f43f5e;
+}
+
+.todo-checkbox:checked::after {
+  content: '✓';
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 10px;
+}

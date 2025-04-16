@@ -23,7 +23,7 @@ if (handleRegister) {
       if (!result.status) {
         alert(result.message || "Register failed");
         return;
-        
+
       } else {
         alert("Register successful");
         console.log(result);
@@ -54,9 +54,7 @@ if (handleLogin) {
       });
 
       console.log("Response object:", response);
-
       const result = await response.json();
-
       console.log("Result dari API:", result); // tampilkan hasil respon API
 
       if (!result.status) {
@@ -67,6 +65,7 @@ if (handleLogin) {
       // Simpan token dan ID user
       localStorage.setItem("token", result.data.token);
       localStorage.setItem("userId", result.data._id);
+      localStorage.setItem("fullName", result.data.fullName)
 
       alert("Login successful!");
       console.log("Redirecting...");
