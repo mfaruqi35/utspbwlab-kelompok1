@@ -6,10 +6,10 @@
 }
 
 @font-face {
-    font-family: 'Montserrat';
-    src: url(../fonts/Montserrat/Montserrat-VariableFont_wght.ttf);
-    font-weight: 400;
-    font-style: normal;
+  font-family: "Montserrat";
+  src: url(../fonts/Montserrat/Montserrat-VariableFont_wght.ttf);
+  font-weight: 400;
+  font-style: normal;
 }
 
 @font-face {
@@ -20,10 +20,10 @@
 }
 
 @font-face {
-    font-family: 'Montserrat';
-    src: url(../fonts/Montserrat/Montserrat-VariableFont_wght.ttf);
-    font-weight: 700;
-    font-style: normal  ;
+  font-family: "Montserrat";
+  src: url(../fonts/Montserrat/Montserrat-VariableFont_wght.ttf);
+  font-weight: 700;
+  font-style: normal;
 }
 
 * {
@@ -56,10 +56,9 @@ body {
   right: 0;
 }
 
-.navbar-logo{
+.navbar-logo {
   padding: 5px;
   font-weight: 800;
-  color: #657ac9;
 }
 
 .navbar-auth {
@@ -102,7 +101,7 @@ body {
 }
 
 h1.greeting {
-  color: #17173C;
+  color: #17173c;
   font-size: 40px;
   font-weight: 600;
   text-wrap: wrap;
@@ -111,181 +110,54 @@ h1.greeting {
 }
 
 p.greeting {
-  color: #17173C;
+  color: #17173c;
   padding-bottom: 10px;
 }
 
 .hero-button {
-  background-color: #fff;
-  border-radius: 5px;
-  padding-block: 7px;
-  padding-inline: 17px;
-  border: 1px rgb(183, 180, 180) solid;
-  box-shadow: 0px 1px rgba(102, 101, 101, 0.6);
-}
-
-.card-feature {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-image: none;
-  width: 90vw;
-  height:75vh;
-  background: #a4b5dc;
-  background: radial-gradient(
-    circle,
-    rgba(164, 181, 220, 1) 0%,
-    rgba(248, 249, 250, 1) 43%
-  );
-}
-
-.feature-left{
-  border: solid;
-  width: 50px;
-  height: 50px;
-  background-color: white;
-}
-
-.feature-center{
-  border: solid;
-  width: 50px;
-  height: 50px;
-  background-color: white;
-}
-
-.feature-right{
-  border: solid;
-  width: 50px;
-  height: 50px;
-  background-color: white ;
-}
-
-.input-container {
-  width: 500px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 10px;
-}
-
-#input-todo {
-  width: 300px;
-  height: 30px;
-  font-size: 1.5rem;
-}
-
-#add-todo {
-  width: 40px;
-  height: 40px;
-  border-radius: 20px;
-  font-size: 1.5rem;
-  border: none;
-  background-color: lightskyblue;
-  cursor: pointer;
-}
-
-.todo-container {
-  width: 500px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.todo {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: lightsalmon;
-  border-radius: 15px;
-  font-size: 1.25rem;
-}
-
-.todo-info {
-  display: flex;
-  margin-left: 5px;
-  gap: 5px;
-}
-
-.todo-btn {
-  margin-right: 10px;
-  display: flex;
-  gap: 10px;
-}
-
-.todo-btn > button {
-  font-family: monospace;
-  border: none;
-  padding: 5px 10px;
-  font-size: 1.25rem;
-  border-radius: 10px;
-  cursor: pointer;
-  color: white;
-}
-
-.todo-edit {
-  background-color: green;
-}
-.todo-delete {
-  background-color: red;
-}
-
-.modal-background {
-  display: none;
-  position: fixed;
-  left: 0;
-  top: 0;
-  z-index: 1;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-.modal {
-  background-color: white;
-  width: 300px;
-  margin: 25% auto;
-  border-radius: 25px;
-  padding: 10px 20px 30px 20px;
-}
-
-.modal-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.close-modal {
-  font-size: 1.5rem;
-  color: grey;
+  font-size: 18px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  display: inline-block;
+  text-align: center;
   font-weight: bold;
-  cursor: pointer;
+  padding: 0.7em 2em;
+  border: 3px solid #ff0072;
+  border-radius: 5px;
+  position: relative;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.1);
+  color: #ff0072;
+  text-decoration: none;
+  transition: 0.3s ease all;
+  z-index: 1;
 }
 
-.modal-bottom {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 10px;
+.hero-button:before {
+  transition: 0.5s ease all;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  right: 50%;
+  bottom: 0;
+  opacity: 0;
+  content: "";
+  background-color: #ff0072;
+  z-index: -1;
 }
 
-#edit-todo-name {
-  width: 250px;
-  height: 25px;
-  font-size: 1.25rem;
-}
-
-#edit-todo-completed-wrapper {
-  font-size: 1.2rem;
-}
-
-#save-todo {
-  background-color: black;
+.hero-button:hover,
+.hero-button:focus {
   color: white;
-  border: none;
-  cursor: pointer;
-  font-size: 1.25rem;
-  width: 75px;
-  height: 40px;
-  border-radius: 20px;
+}
+
+.hero-button:hover:before,
+button:focus:before {
+  transition: 0.5s all ease;
+  left: 0;
+  right: 0;
+  opacity: 1;
+}
+
+.hero-button:active {
+  transform: scale(0.9);
 }
