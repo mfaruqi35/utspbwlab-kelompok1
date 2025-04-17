@@ -116,7 +116,7 @@ function displayTodos(todoArr) {
 
     // Edit button
     let editBtn = document.createElement("button");
-    editBtn.classList.add("text-gray-500", "hover:text-rose-500");
+    editBtn.classList.add("text-gray-500", "hover:text-[#ff0072]");
     editBtn.innerHTML = '<i class="fas fa-edit"></i>';
     editBtn.addEventListener("click", () => {
       openEditModal(todoElem);
@@ -124,7 +124,7 @@ function displayTodos(todoArr) {
 
     // Delete button
     let deleteBtn = document.createElement("button");
-    deleteBtn.classList.add("text-gray-500", "hover:text-rose-500");
+    deleteBtn.classList.add("text-gray-500", "hover:text-[#ff0072]");
     deleteBtn.innerHTML = '<i class="fas fa-trash"></i>';
     deleteBtn.addEventListener("click", () => {
       deleteTodos(todoElem);
