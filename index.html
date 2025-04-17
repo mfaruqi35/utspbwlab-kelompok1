@@ -1,13 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>To Do</title>
-    <link rel="stylesheet" href="assets/styles/style.css">
-</head>
-<body>
-    <h1>TESTING</h1>
-    
-</body>
+    <link rel="stylesheet" href="./assets/styles/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        font-family: "Montserrat";
+      }
+    </style>
+  </head>
+  <body class="bg-[url('assets/images/hero.jpg')] bg-center bg-no-repeat">
+    <nav class="navbar">
+      <div class="navbar-logo text-3xl text-[#fff] bg-[#ff0072] h-[60px] w-[170px] flex justify-center items-center rounded-tl-lg rounded-br-lg">
+        <h1>
+          TaskFlow
+        </h1>
+      </div>
+      <div class="navbar-auth">
+        <a href="login.html">
+          <button class="login-button font-semibold text-[#ff0072]">Log in</button>
+        </a>
+        <a href="register.html">
+          <button class="register-button font-semibold">Sign Up</button>
+        </a>
+      </div>
+    </nav>
+    <section class="hero">
+      <main class="hero-content">
+        <h1 class="greeting">The better way to schedule your day</h1>
+        <p class="greeting">
+          A fully customisable scheduling experience for individuals.
+        </p>
+        <a href="register.html">
+          <button class="hero-button">Get started</button>
+        </a>
+      </main>
+    </section>
+  </body>
 </html>
