@@ -20,7 +20,7 @@ const profileDropdown = document.getElementById("profile-dropdown");
 const logoutBtn = document.getElementById("logout-btn");
 const userInitial = document.getElementById("user-initial");
 const userFirstname = document.getElementById("user-firstname");
-const userFullname = document.getElementById("user-fullname");
+// const userFullname = document.getElementById("user-fullname");
 
 const BASE_URL = "https://api-todo-list-pbw.vercel.app/todo";
 
@@ -31,7 +31,6 @@ const fullName = localStorage.getItem("fullName");
 
 let todoArray = [];
 let currentEditTodo = null;
-let sidebarOpen = true;
 
 // Auth guard
 if (!token || !userId) {
@@ -41,7 +40,7 @@ if (!token || !userId) {
   // Set user info
   const userName = fullName.split(" ")[0];
   userFirstname.textContent = userName;
-  userFullname.textContent = fullName;
+  // userFullname.textContent = fullName;
   userInitial.textContent = userName.charAt(0).toUpperCase();
 }
 

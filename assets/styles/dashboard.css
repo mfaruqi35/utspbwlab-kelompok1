@@ -59,7 +59,6 @@
   cursor: pointer;
 }
 
-/* Loading animation */
 @keyframes spin {
   from {
       transform: rotate(0deg);
@@ -73,7 +72,6 @@
   animation: spin 1s linear infinite;
 }
 
-/* Todo actions appear on hover */
 .todo-actions {
   display: none;
 }
@@ -82,7 +80,6 @@
   display: flex;
 }
 
-/* For the completed todo checkbox */
 .todo-checkbox {
   appearance: none;
   -webkit-appearance: none;
