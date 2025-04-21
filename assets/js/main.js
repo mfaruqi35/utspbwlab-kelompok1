@@ -264,14 +264,36 @@ async function deleteTodos(todoElem) {
 }
 
 // Function to handle logout
-function handleLogout() {
-  // Clear local storage
-  localStorage.removeItem("fullName");
-  localStorage.removeItem("token");
-  localStorage.removeItem("userId");
+async function handleLogout() {
+  showLoading(); // tampilkan loading saat logout dimulai
+  try {
+    const response = await fetch(`https://api-todo-list-pbw.vercel.app/auth/logout/${userId}`, {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+    });
 
-  // Redirect to login page
-  window.location.href = "login.html";
+    const data = await response.json();
+
+    if (response.ok && data.status) {
+      // Hapus local storage hanya jika logout berhasil
+      localStorage.removeItem("fullName");
+      localStorage.removeItem("token");
+      localStorage.removeItem("userId");
+
+      // Redirect ke halaman login
+      window.location.href = "login.html";
+    } else {
+      alert(data.message || "Logout gagal, silakan coba lagi.");
+    }
+  } catch (error) {
+    console.error("Error saat logout:", error);
+    alert("Terjadi kesalahan saat logout.");
+  } finally {
+    hideLoading(); // sembunyikan loading
+  }
 }
 
 // Open modal
